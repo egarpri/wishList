@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="wishList">
+<head>
+	<meta charset="UTF-8" />
+	<title>WISH LIST</title>
+</head>
+
+<body ng-app="wishlistapp" ng-controller="WishController" ng-init="getWishes()">
+
+	<div class="container" ng-show="wishes != null">
+		<div ng-repeat="wish in wishes">
+			<h4><span> {{wish.title}} </span></h4>
+		</div>
+	</div>
+	
+	<div class="form">
+		<label for="title">Wish:</label>
+		<input id="title" ng-model="title" type="text" />
+		
+		<button id="addBtn" class="btn" ng-click="addWish()">Add wish</button>
+		<button id="addBtn" class="btn" ng-click="deleteWish()">Delete wish</button>
+		<button id="addBtn" class="btn" ng-click="searchWish()">Search wish</button>
+	</div>
+	
+	<h4>{{msg}}</h4>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-resource.js"></script>
+	<script src="./js/services.js"></script>
+</body>
+</html>
+
